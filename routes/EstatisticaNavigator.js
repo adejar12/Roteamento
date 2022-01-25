@@ -46,7 +46,9 @@ export default function EstatisticaNavigator() {
 
   return (
     <Stack.Navigator screenOptions={{ cardStyle: { backgroundColor: "#FFF" } }}>
-      <Stack.Screen name="Estatistica" component={Estatistica} />
+      <Stack.Screen name="Estatistica" component={Estatistica}  options={{
+        title:false
+      }}/>
       <Stack.Screen
         name="EstatisticaComum"
         component={EstatisticaComum}

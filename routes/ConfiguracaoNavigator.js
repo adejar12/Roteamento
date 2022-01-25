@@ -47,7 +47,9 @@ export default function ConfiguracaoNavigator() {
 
   return (
     <Stack.Navigator screenOptions={{ cardStyle: { backgroundColor: "#FFF" } }}>
-      <Stack.Screen name="Configuracao" component={ConfiguracaoSreen} />
+      <Stack.Screen name="Configuracao" component={ConfiguracaoSreen}  options={{
+        title:false
+      }} />
       <Stack.Screen
         name="Perfil"
         component={PerfilSreen}

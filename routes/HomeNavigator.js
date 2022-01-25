@@ -29,12 +29,7 @@ export default function HomeNavigator() {
             paddingLeft: 12,
           }}
           onPress={() =>
-            navigation.navigate("Home", {
-              screen: "HomeNavigator",
-              params: {
-                screen: "Inicio",
-              },
-            })
+            navigation.goBack()
           }
         >
           <Ionicons name="ios-chevron-back" size={32} color="#000" />
@@ -45,13 +40,13 @@ export default function HomeNavigator() {
 
   return (
     <Stack.Navigator screenOptions={{ cardStyle: { backgroundColor: "#FFF" } }}>
-      <Stack.Screen name="Inicio" component={InicioScreen} />
+      <Stack.Screen name="Inicio" component={InicioScreen} options={{
+        title:false
+      }}/>
       <Stack.Screen
         name="Publicacao"
         component={PublicacaoScreen}
-        options={options({
-          screen: "Inicio",
-        })}
+        options={options()}
       />
     </Stack.Navigator>
   );
