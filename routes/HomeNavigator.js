@@ -2,6 +2,7 @@ import { createStackNavigator   } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Header from "../src/components/Header";
 
 const Stack = createStackNavigator  ();
 
@@ -29,7 +30,12 @@ export default function HomeNavigator() {
             paddingLeft: 12,
           }}
           onPress={() =>
-            navigation.goBack()
+            navigation.navigate("Home", {
+              screen: "HomeNavigator",
+              params: {
+                screen: "Inicio",
+              },
+            })
           }
         >
           <Ionicons name="ios-chevron-back" size={32} color="#000" />
@@ -41,7 +47,8 @@ export default function HomeNavigator() {
   return (
     <Stack.Navigator screenOptions={{ cardStyle: { backgroundColor: "#FFF" } }}>
       <Stack.Screen name="Inicio" component={InicioScreen} options={{
-        title:false
+        title: false,
+        header: () => <Header /> 
       }}/>
       <Stack.Screen
         name="Publicacao"

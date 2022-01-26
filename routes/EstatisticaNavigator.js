@@ -2,6 +2,7 @@ import { createStackNavigator  } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Header from "../src/components/Header";
 
 const Stack = createStackNavigator();
 
@@ -33,7 +34,7 @@ export default function EstatisticaNavigator() {
             navigation.navigate("Home", {
               screen: "EstatisticaNavigator",
               params: {
-                screen: "Estatistica",
+                screen: route.screen,
               },
             })
           }
@@ -47,7 +48,8 @@ export default function EstatisticaNavigator() {
   return (
     <Stack.Navigator screenOptions={{ cardStyle: { backgroundColor: "#FFF" } }}>
       <Stack.Screen name="Estatistica" component={Estatistica}  options={{
-        title:false
+        title: false,
+        header: () => <Header /> 
       }}/>
       <Stack.Screen
         name="EstatisticaComum"
@@ -60,7 +62,7 @@ export default function EstatisticaNavigator() {
         name="EstatistaPublicidade"
         component={EstatistaPublicidade}
         options={options({
-          screen: "Estatistica",
+          screen: "EstatisticaComum",
         })}
       />
     </Stack.Navigator>
