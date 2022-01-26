@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View,TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Inicio() {
@@ -10,19 +10,51 @@ export default function Inicio() {
       <Text>Página Inicio</Text>
 
       <TouchableOpacity
+        style={{
+          backgroundColor: "red",
+          width: "80%",
+          height: 30,
+          borderRadius: 10,
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 80,
+        }}
         onPress={() => {
           navigation.navigate("Publicacao");
         }}
       >
-        <Text> Ir para a publicação Interna</Text>
+        <Text
+          style={{
+            color: "white",
+          }}
+        >
+          {" "}
+          Ir para a publicação Interna
+        </Text>
       </TouchableOpacity>
 
       <TouchableOpacity
+        style={{
+          backgroundColor: "red",
+          width: "80%",
+          height: 30,
+          borderRadius: 10,
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 80,
+        }}
         onPress={() => {
           navigation.navigate("PublicacaoExterna");
         }}
       >
-        <Text> Ir para a Publicação Externa</Text>
+        <Text
+          style={{
+            color: "white",
+          }}
+        >
+          {" "}
+          Ir para a Publicação Externa
+        </Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
