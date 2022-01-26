@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
-export default function Sobre({ route, navigation }) {
+export default function Sobre() {
+
+  const { params } = useRoute();
   return (
     <View style={styles.container}>
           <Text>Página Sobre</Text>
-          <Text>Meu nome é {route.params?.nome}</Text>
+          <Text>Meu nome é {params?.nome}</Text>
       <StatusBar style="auto" />
     </View>
   );
