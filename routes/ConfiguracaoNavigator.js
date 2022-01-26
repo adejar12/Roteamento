@@ -1,4 +1,4 @@
-import { createStackNavigator  } from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
@@ -10,6 +10,7 @@ import SobreSreen from "../src/pages/Sobre";
 import InfoSreen from "../src/pages/Info";
 import PerfilSreen from "../src/pages/Perfil";
 import ConfiguracaoSreen from "../src/pages/Configuração";
+import PublicacaoScreen from "../src/pages/Publicação";
 
 export default function ConfiguracaoNavigator() {
   const navigation = useNavigation();
@@ -48,10 +49,14 @@ export default function ConfiguracaoNavigator() {
 
   return (
     <Stack.Navigator screenOptions={{ cardStyle: { backgroundColor: "#FFF" } }}>
-      <Stack.Screen name="Configuracao" component={ConfiguracaoSreen}  options={{
-        title: false,
-        header: () => <Header /> 
-      }} />
+      <Stack.Screen
+        name="Configuracao"
+        component={ConfiguracaoSreen}
+        options={{
+          title: false,
+          header: () => <Header />,
+        }}
+      />
       <Stack.Screen
         name="Perfil"
         component={PerfilSreen}
@@ -72,6 +77,11 @@ export default function ConfiguracaoNavigator() {
         options={options({
           screen: "Configuracao",
         })}
+      />
+      <Stack.Screen
+        name="PublicacaoConfig"
+        component={PublicacaoScreen}
+        options={options()}
       />
     </Stack.Navigator>
   );
