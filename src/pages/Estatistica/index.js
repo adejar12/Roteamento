@@ -38,21 +38,6 @@ export default function Estatistica() {
   );
 }
 
-Estatistica.navigationOptions = ({ navigation }) => ({
-  headerLeft: () => (
-    <TouchableOpacity
-      style={{
-        paddingLeft: 12,
-      }}
-      onPress={() =>
-        navigation.goBack()
-      }
-    >
-      <Ionicons name="ios-chevron-back" size={32} color="red" />
-    </TouchableOpacity>
-  )
-});
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
