@@ -1,4 +1,4 @@
-import { createStackNavigator  } from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
@@ -47,10 +47,14 @@ export default function EstatisticaNavigator() {
 
   return (
     <Stack.Navigator screenOptions={{ cardStyle: { backgroundColor: "#FFF" } }}>
-      <Stack.Screen name="Estatistica" component={Estatistica}  options={{
-        title: false,
-        header: () => <Header /> 
-      }}/>
+      <Stack.Screen
+        name="Estatistica"
+        component={Estatistica}
+        options={{
+          title: false,
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name="EstatisticaComum"
         component={EstatisticaComum}

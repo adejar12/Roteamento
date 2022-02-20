@@ -57,6 +57,30 @@ export default function Inicio() {
         </Text>
       </TouchableOpacity>
 
+      <TouchableOpacity
+        style={{
+          backgroundColor: "red",
+          width: "80%",
+          height: 30,
+          borderRadius: 10,
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 80,
+        }}
+        onPress={() => {
+          navigation.navigate("Video");
+        }}
+      >
+        <Text
+          style={{
+            color: "white",
+          }}
+        >
+          {" "}
+          Ir para Videos
+        </Text>
+      </TouchableOpacity>
+
       <StatusBar style="auto" />
     </View>
   );
